@@ -1,0 +1,72 @@
+
+huidig_scherm = 0
+
+def setup():
+    size(1280,720)                                     #  size delen door 2
+    background(0)
+
+def draw():
+    global huidig_scherm
+    background('#44028F')
+    if huidig_scherm == 0:
+        fill('#AA77FF')
+        if 10 < mouseX <100  and 672 < mouseY <707 : 
+            fill('#D6C0FC')
+            cursor(HAND)
+        else:
+            cursor(ARROW)
+        rect(8, 680, 90, 35, 6)                         # size delen door 2
+        fill(0)
+        text('Pauze', 18, 683, 90, 60)               # size delen door 2
+        textSize(25)
+    elif huidig_scherm == 1:
+        background('#44028F')
+        fill('#AA77FF')
+        if 540 < mouseX <740  and 250 < mouseY <300: 
+            fill('#D6C0FC')
+            cursor(HAND)
+        else:
+            cursor(ARROW)
+        rect(540, 250, 200, 50, 10)                      # size delen door 2
+        fill(0)
+        textSize(31)
+        text('Hervatten', 565, 257, 150, 50)          # size delen door 2   
+        
+        
+        
+        fill('#AA77FF')
+        if 540 < mouseX <740  and 325 < mouseY <375: 
+            fill('#D6C0FC')
+            cursor(HAND)
+        else:
+            cursor(ARROW)
+        rect(540, 325, 200, 50, 10)                     # size delen door 2
+        fill(0)
+        text('Instellingen', 555, 332, 200, 50)      # size delen door 2
+        textSize(30)                                 # deze size pakt zomaar 'stoppen'
+        
+        
+        fill('#AA77FF')
+        if 540 < mouseX <740  and 400 < mouseY <450: 
+          fill('#D6C0FC')
+          cursor(HAND)
+        else:
+            cursor(ARROW)
+        rect(540, 400, 200, 50, 10)                     # size delen door 2
+        fill(0)
+        text('Stoppen', 577, 407, 200, 50)
+        textSize(27) 
+            # if 540 < mouseX <740  and 400 < mouseY <450:  
+            #     exit()
+            # else:
+            #     pass            # deze size pakt zomaar 'instellingen'
+        
+
+def mouseClicked():
+    global huidig_scherm
+    if huidig_scherm == 0:
+     if 10 < mouseX < 100 and 672 < mouseY < 707:      # size delen door 2
+        huidig_scherm = 1
+    elif huidig_scherm == 1:
+        if 565 < mouseX < 715 and 255 < mouseY < 305:         # size delen door 2
+            huidig_scherm = 0
